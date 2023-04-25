@@ -4,40 +4,29 @@ import Login from "../Login"
 import TodoList from "../TodoList"
 import { useState } from 'react';
 
+/* using the database created, we want to create a function that will pull down data from the database and display it on the page, when the checkbox is checked, change completed in the database to be true
+
+use usestate to take in the data from the database and display the objects within the array on the page
+
+push the task object into an array and display the array on the page
+
+
+*/
 
 function App() {
-  const userData = [
+ /* const userData = [
     {
         toDoList: [ 
-            { task1: "make avatar", dueDate: "25/04/2023", completed: false},
-            { task2:" make game", dueDate: "30/04/2023", completed: false, }
+            { task: "make avatar", dueDate: "25/04/2023", completed: false},
+            { task:" make game", dueDate: "30/04/2023", completed: false, }
         ]
       }
     ]
-
-
-  const [list1, setList1] = useState(userData[0]);
-  const [list2, setList2] = useState([]);
-
-
-const handleCheckboxClick = (item) => {
-  if (list1.includes(item)) {
-    setList1(list1.filter((listItem) => listItem !== item));
-    setList2([...list2, item]);
-  } else {
-    setList2(list2.filter((listItem) => listItem !== item));
-    setList1([...list1, item]);
-  }
-};
-
-
+ const [user, setUser] = useState(userData[0].toDoList[0])
+*/
   return (
     <div className="App">
-    <Bio/> 
-    <h1> list 1 </h1>
-    <TodoList items = {list1} onCheckboxClick={handleCheckboxClick}/>
-    <h1> list 2 </h1>
-    <TodoList items = {list2} onCheckboxClick = {handleCheckboxClick}/>
+      <TodoList/>
     </div>
   );
 }

@@ -8,20 +8,26 @@ probably need a useState hook to keep track of the state of the checkbox
 
 
 import React from "react";
-import CompletedList from "../CompletedList";
+//import CompletedList from "../CompletedList";
 
-function TodoList({ items, onCheckboxClick }) {
+function TodoList() {
+    const userData = [
+        {
+            toDoList: [ 
+                { task: "make avatar", dueDate: "25/04/2023", completed: false},
+                { task:" make game", dueDate: "30/04/2023", completed: false, }
+            ]
+          }
+        ]
+
+function text (userData) {
+    userData[0].toDoList.map((item) => (item.task))
+    }
+
   return (
     <ul>
-      {items &&
-        items.map((item) => (
-          <CompletedList
-            key={item}
-            item={item}
-            isChecked={onCheckboxClick.includes(item)}
-            onCheckboxClick={onCheckboxClick}
-          />
-        ))}
+    {userData[0].toDoList.map((item) => (<li>{item.task}</li>))}
+    {userData[0].toDoList.map((item) => (<li>{item.completed}</li>))}
     </ul>
   );
 }
