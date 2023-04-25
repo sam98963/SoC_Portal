@@ -14,19 +14,19 @@ push the task object into an array and display the array on the page
 */
 
 function App() {
- /* const userData = [
-    {
-        toDoList: [ 
-            { task: "make avatar", dueDate: "25/04/2023", completed: false},
-            { task:" make game", dueDate: "30/04/2023", completed: false, }
-        ]
-      }
-    ]
- const [user, setUser] = useState(userData[0].toDoList[0])
-*/
+  const userData = {
+    toDoList: [
+      { task: "make avatar", dueDate: "25/04/2023", completed: false },
+      { task: "make game", dueDate: "30/04/2023", completed: false },
+    ],
+  };
+
+  console.log(userData); // add this line to check the value of userData
+
+
   return (
     <div className="App">
-      <TodoList/>
+      <TodoList userData = {userData}/>
     </div>
   );
 }

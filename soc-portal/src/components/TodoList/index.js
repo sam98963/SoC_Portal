@@ -7,27 +7,32 @@ probably need a useState hook to keep track of the state of the checkbox
 */
 
 
-import React from "react";
-//import CompletedList from "../CompletedList";
+import React, { useState } from "react";
 
-function TodoList() {
-    const userData = [
-        {
-            toDoList: [ 
-                { task: "make avatar", dueDate: "25/04/2023", completed: false},
-                { task:" make game", dueDate: "30/04/2023", completed: false, }
-            ]
-          }
-        ]
+function TodoList({userData}) {
+  const [list, setList] = useState(userData.toDoList);
 
-function text (userData) {
-    userData[0].toDoList.map((item) => (item.task))
-    }
+  const handleChange = (index) => {
+    const updatedList = [...list];
+    updatedList[index].completed = !updatedList[index].completed;
+    setList(updatedList);
+    console.log(updatedList)
+  };
 
   return (
     <ul>
-    {userData[0].toDoList.map((item) => (<li>{item.task}</li>))}
-    {userData[0].toDoList.map((item) => (<li>{item.completed}</li>))}
+      {list.map((item, index) => (
+        <li key={index}>
+          <label>
+          {item.task}
+            <input
+              type="checkbox"
+              checked={item.completed}
+              onChange={() => handleChange(index)}
+            />
+          </label>
+        </li>
+      ))}
     </ul>
   );
 }
