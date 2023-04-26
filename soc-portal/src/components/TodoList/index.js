@@ -10,13 +10,17 @@ probably need a useState hook to keep track of the state of the checkbox
 import React, { useState } from "react";
 
 function TodoList({list, complete, setList, setComplete}) {
+  console.log(list)
   const moveToCompleted = (index) => {
+   
 
     const updatedList = list.filter((item, i) => i !== index);
     updatedList.completed = !updatedList.completed
 
     const itemToMove = list[index];
     itemToMove.completed = !itemToMove.completed
+
+
 
     setList(updatedList);
     setComplete([...complete, itemToMove]);

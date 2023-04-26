@@ -29,7 +29,7 @@ export const loginData =  [
   },  
 ]  
 
-export const userData = [
+const userData = [
 
     {
         firstName: "Hung",
@@ -37,8 +37,8 @@ export const userData = [
         email: "hungv@gmail.com",
         appId: "123456",
         toDoList: [ 
-            { task1: "make avatar", dueDate: "25/04/2023", completed: false},
-            { task2:" make game", dueDate: "30/04/2023", completed: false, }
+            { task: "make avatar", dueDate: "25/04/2023", completed: false},
+            { task:" make game", dueDate: "30/04/2023", completed: false, }
         ]
     },
     {
@@ -47,8 +47,8 @@ export const userData = [
         email: "ahiajalil@gmail.com",
         appId: "147852",
         toDoList: [ 
-            { task1: "make avatar", dueDate: "25/04/2023", completed: true },
-            { task2:" make game", dueDate: "30/04/2023", completed: false, }
+            { task: "make avatar", dueDate: "25/04/2023", completed: true },
+            { task:" make game", dueDate: "30/04/2023", completed: false, }
         ]
     },
     {
@@ -57,8 +57,8 @@ export const userData = [
         email: "samw@gmail.com",
         appId: "369852",
         toDoList: [ 
-            { task1: "make avatar", dueDate: "25/04/2023", completed: true },
-            { task2:" make game", dueDate: "30/04/2023", completed: true, }
+            { task: "make avatar", dueDate: "25/04/2023", completed: true },
+            { task:" make game", dueDate: "30/04/2023", completed: true, }
         ]
     },
     {
@@ -67,8 +67,10 @@ export const userData = [
         email: "hani@gmail.com",
         appId: "456321",
         toDoList: [ 
-            { task1: "make avatar", dueDate: "25/04/2023", completed: true },
-            { task2:" make game", dueDate: "30/04/2023", completed: true, }
+            { task: "make avatar", dueDate: "25/04/2023", completed: true },
+            { task:" make game", dueDate: "30/04/2023", completed: true, }
         ]
     }
 ]
+
+export default userData;
