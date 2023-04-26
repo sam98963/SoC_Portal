@@ -9,54 +9,69 @@ probably need a useState hook to keep track of the state of the checkbox
 
 import React, { useState } from "react";
 
-function TodoList({userData, list, complete, setList, setComplete}) {
-  const handleChange = (index) => {
-    const updatedList = [...list];
-    updatedList[index].completed = !updatedList[index].completed;
+function TodoList({list, complete, setList, setComplete}) {
+  const moveToCompleted = (index) => {
+
+    const updatedList = list.filter((item, i) => i !== index);
+    updatedList.completed = !updatedList.completed
+
+    const itemToMove = list[index];
+    itemToMove.completed = !itemToMove.completed
+
     setList(updatedList);
-    // console.log(updatedList)
-
-  
-
-    setComplete(userData.toDoList.filter((item,index)=>{
-      return item.completed
-      }))
-    console.log(complete)
+    setComplete([...complete, itemToMove]);
   };
+
+
+  const moveToToDo = (index) => {
+
+    const updatedList = complete.filter((item, i) => i !== index);
+    updatedList.completed = !updatedList.completed
+
+    const itemToMove = complete[index];
+    itemToMove.completed = !itemToMove.completed
+
+    setList([...list, itemToMove]);
+    setComplete([...updatedList]);
+  };
+
+
+
+
 
   return (
     <div>
-    <ul>
-      {list.map((item, index) => (
-        <li key={index}>
-          <label>
-          {item.task}
-            <input
-              type="checkbox"
-              checked={item.completed}
-              onChange={() => handleChange(index)}
-            />
-          </label>
-        </li>
-      ))}
-    </ul>
-    <h3>Completed List</h3>
-    <ul>
-      {complete.map((item, index) => (
-        <li key={index}>
-          <label>
-          {item.task}
-            <input
-              type="checkbox"
-              checked={item.completed}
-              onChange={() => handleChange(index)}
-            />
-          </label>
-        </li>
-      ))}
-    </ul>
-</div>
-    
+      <h3>To Do List</h3>
+      <ul>
+        {list.map((item, index) => (
+          <li key={index}>
+            <label>
+              {item.task}
+              <input
+                type="checkbox"
+                checked={item.completed}
+                onChange={() => moveToCompleted(index)}
+              />
+            </label>
+          </li>
+        ))}
+      </ul>
+      <h3>Completed List</h3>
+      <ul>
+        {complete.map((item, index) => (
+          <li key={index}>
+            <label>
+              {item.task}
+              <input
+                type="checkbox"
+                checked={item.completed}
+                onChange={() => moveToToDo(index)}
+              />
+            </label>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

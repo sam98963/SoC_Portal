@@ -24,6 +24,12 @@ function App() {
     toDoList: [
       { task: "make avatar", dueDate: "25/04/2023", completed: true },
       { task: "make game", dueDate: "30/04/2023", completed: false },
+      { task: "make qwer", dueDate: "25/04/2023", completed: true },
+      { task: "make asedf", dueDate: "30/04/2023", completed: false },
+      { task: "make zxcv", dueDate: "25/04/2023", completed: false },
+      { task: "make yuio", dueDate: "30/04/2023", completed: false },
+      { task: "make hjkr", dueDate: "25/04/2023", completed: false },
+      { task: "make hjkl", dueDate: "30/04/2023", completed: false },
     ],
   };
 
@@ -32,14 +38,11 @@ function App() {
   
 
   useEffect(() => {
-    const secondListItem = userData.toDoList.filter((item,index)=>{
-      return item.completed
-      })
-      const firstListItem = userData.toDoList.filter((item,index)=>{
-        return !item.completed})
-        setComplete(secondListItem)
-        setList(firstListItem)
-  }, [])
+    const completedItems = userData.toDoList.filter(item => item.completed);
+    const toDoItems = userData.toDoList.filter(item => !item.completed);
+    setComplete(completedItems);
+    setList(toDoItems);
+  }, []);
 
 
   // console.log(userData); // add this line to check the value of userData
