@@ -1,3 +1,8 @@
+import profileImageHung from "./Images/hung.png";
+import profileImageHani from "./Images/hani.png";
+import profileImageSam from "./Images/sam.png";
+import profileImageAhia from "./Images/ahia.png";
+
 export const loginData =  [  
   {
       firstName: "Hani",
@@ -36,6 +41,7 @@ const userData = [
         surname: "Vo",
         email: "hungv@gmail.com",
         appId: "123456",
+        image: profileImageHung,
         toDoList: [ 
             { task: "make avatar", dueDate: "25/04/2023", completed: false},
             { task:" make game", dueDate: "30/04/2023", completed: false, }
@@ -46,6 +52,7 @@ const userData = [
         surname: "Jalil",
         email: "ahiajalil@gmail.com",
         appId: "147852",
+        image: profileImageAhia,
         toDoList: [ 
             { task: "make avatar", dueDate: "25/04/2023", completed: true },
             { task:" make game", dueDate: "30/04/2023", completed: false, }
@@ -56,6 +63,7 @@ const userData = [
         surname: "Willimason",
         email: "samw@gmail.com",
         appId: "369852",
+        image: profileImageSam,
         toDoList: [ 
             { task: "make avatar", dueDate: "25/04/2023", completed: true },
             { task:" make game", dueDate: "30/04/2023", completed: true, }
@@ -66,6 +74,7 @@ const userData = [
         surname: "Abdi",
         email: "hani@gmail.com",
         appId: "456321",
+        image: profileImageHani,
         toDoList: [ 
             { task: "make avatar", dueDate: "25/04/2023", completed: true },
             { task:" make game", dueDate: "30/04/2023", completed: true, }
