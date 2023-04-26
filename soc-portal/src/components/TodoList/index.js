@@ -9,11 +9,7 @@ probably need a useState hook to keep track of the state of the checkbox
 
 import React, { useState } from "react";
 
-function TodoList({userData}) {
-  const [list, setList] = useState(userData.toDoList);
-
-  const [complete, setComplete] = useState ([])
-
+function TodoList({userData, list, complete, setList, setComplete}) {
   const handleChange = (index) => {
     const updatedList = [...list];
     updatedList[index].completed = !updatedList[index].completed;
@@ -29,6 +25,7 @@ function TodoList({userData}) {
   };
 
   return (
+    <div>
     <ul>
       {list.map((item, index) => (
         <li key={index}>
@@ -43,6 +40,23 @@ function TodoList({userData}) {
         </li>
       ))}
     </ul>
+    <h3>Completed List</h3>
+    <ul>
+      {complete.map((item, index) => (
+        <li key={index}>
+          <label>
+          {item.task}
+            <input
+              type="checkbox"
+              checked={item.completed}
+              onChange={() => handleChange(index)}
+            />
+          </label>
+        </li>
+      ))}
+    </ul>
+</div>
+    
   );
 }
 
