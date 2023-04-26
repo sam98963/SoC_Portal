@@ -11,22 +11,30 @@ use usestate to take in the data from the database and display the objects withi
 push the task object into an array and display the array on the page
 
 
+run through to-do list array and select completed key
+if completed === true then add object to second array and remove from first. 
+
+
 */
 
 function App() {
   const userData = {
     toDoList: [
-      { task: "make avatar", dueDate: "25/04/2023", completed: false },
+      { task: "make avatar", dueDate: "25/04/2023", completed: true },
       { task: "make game", dueDate: "30/04/2023", completed: false },
     ],
   };
 
-  console.log(userData); // add this line to check the value of userData
+   const [complete, setComplete] = useState ([])
+
+   
+
+  // console.log(userData); // add this line to check the value of userData
 
 
   return (
     <div className="App">
-      <TodoList userData = {userData}/>
+      <TodoList userData = {userData} />
     </div>
   );
 }

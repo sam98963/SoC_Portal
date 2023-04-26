@@ -12,11 +12,20 @@ import React, { useState } from "react";
 function TodoList({userData}) {
   const [list, setList] = useState(userData.toDoList);
 
+  const [complete, setComplete] = useState ([])
+
   const handleChange = (index) => {
     const updatedList = [...list];
     updatedList[index].completed = !updatedList[index].completed;
     setList(updatedList);
-    console.log(updatedList)
+    // console.log(updatedList)
+
+  
+
+    setComplete(userData.toDoList.filter((item,index)=>{
+      return item.completed
+      }))
+    console.log(complete)
   };
 
   return (
