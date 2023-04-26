@@ -33,6 +33,77 @@ function App() {
     setComplete(completedItems);
     setList(toDoItems);
   }, []);
+    
+  const loginData =  [  
+    {
+        firstName: "Hani",
+        surname: "Abdi",
+        username:"hania",
+        email: "hani@gmail.com",
+        password: "1234"
+    },  
+     {
+        firstName: "Samuel",
+        surname: "Willimason",
+        username:"samw",
+        email: "samw@gmail.com",
+        password: "1234"
+    },  
+    {
+        firstName: "Ahia",
+        surname: "Jalil",
+        username:"ahiaj",
+        email: "ahiaj@gmail.com",
+        password: "1234"
+    },  
+    {
+        firstName: "Hung",
+        surname: "Vo",
+        username:"hungv",
+        email: "hungv@gmail.com",
+        password: "1234"
+    },  
+  ]  
+
+
+
+  function handleLogin(event){
+    event.preventDefault()
+    const username = event.target.elements.username.value
+    const password = event.target.elements.password.value
+    console.log(username)
+    console.log(password)
+// for loop loginData[i].username
+// nest if loop within
+    let userEmail = ""
+    for (let i=0; i<loginData.length; i++){
+        if(username === loginData[i].username && password === loginData[i].password){
+            userEmail = loginData[i].email
+        } if(username === loginData[i].username && password !== loginData[i].password)
+        {
+            alert("Password Incorrect")
+        }
+        else {console.log(false)}
+      }
+      
+    for (let i=0; i<loginData.length; i++){
+      if(userEmail === userData[i].email) {
+        setList(userData[i].toDoList)
+        setPInfo(userData[i])
+      } else {
+        console.log("no")
+      }
+    }
+
+        
+
+    
+}
+
+
+
+
+
 
 
   // console.log(userData); // add this line to check the value of userData
@@ -40,10 +111,10 @@ function App() {
 
   return (
     <div className="App">
+    <Login handleLogin = {handleLogin}/>
     <Bio pInfo = {pInfo}/>
       <TodoList userData = {userData} setList ={setList} setComplete = {setComplete} list={list} complete={complete}/>
     </div>
   );
 }
-
 export default App;

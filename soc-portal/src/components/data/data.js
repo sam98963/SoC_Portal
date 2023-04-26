@@ -50,7 +50,7 @@ const userData = [
     {
         firstName: "Ahia",
         surname: "Jalil",
-        email: "ahiajalil@gmail.com",
+        email: "ahiaj@gmail.com",
         appId: "147852",
         image: profileImageAhia,
         toDoList: [ 
