@@ -48,7 +48,7 @@ function handleLogin(event){
     return (
         <>
         <div id = 'loginDiv'>
-            <form onSubmit = {handleLogin}>
+            <form id ='form' onSubmit = {handleLogin}>
                <label id = 'usernameLabel'>Username:<input type="text" id = "username"></input></label>
                 <label id = 'passwordLabel'>Password:<input type="text" id = "password"></input></label>
                 <button type="submit">Submit</button>

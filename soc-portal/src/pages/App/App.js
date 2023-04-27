@@ -42,9 +42,7 @@ function App() {
   return (
     
     <div className="App">
-      <div className="bio-column">
         <Bio pInfo={pInfo} />
-      </div>
       <div className="todolist-column">
         <TodoList userData={userData} setList={setList} setComplete={setComplete} list={list} complete={complete} />
       </div>
