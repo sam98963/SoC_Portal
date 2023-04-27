@@ -13,19 +13,15 @@ function TodoList({list, complete, setList, setComplete}) {
   console.log(list)
   const moveToCompleted = (index) => {
    
-
     const updatedList = list.filter((item, i) => i !== index);
     updatedList.completed = !updatedList.completed
 
     const itemToMove = list[index];
     itemToMove.completed = !itemToMove.completed
 
-
-
     setList(updatedList);
     setComplete([...complete, itemToMove]);
   };
-
 
   const moveToToDo = (index) => {
 

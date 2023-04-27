@@ -34,7 +34,7 @@ export const loginData =  [
   },  
 ]  
 
-const userData = [
+export const userData = [
 
     {
         firstName: "Hung",
@@ -43,7 +43,7 @@ const userData = [
         appId: "123456",
         image: profileImageHung,
         toDoList: [ 
-            { task: "make avatar", dueDate: "25/04/2023", completed: false},
+            { task: "make avatar", dueDate: "25/04/2023", completed: true},
             { task:" make game", dueDate: "30/04/2023", completed: false, }
         ]
     },
