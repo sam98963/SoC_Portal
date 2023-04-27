@@ -3,12 +3,16 @@
 function Bio ({pInfo}){
 
 return (
-    <div>
-        <label>Applicant Name:<h1>{pInfo.firstName} {pInfo.surname}</h1></label>
-        <label>Applicant Email:<h2>{pInfo.email}</h2></label>
-        <label>Application ID:<p>{pInfo.appId}</p></label>
-        <label>Profile Image:</label>
-        <img src={pInfo.image} alt = 'Profile Image' />
+    <div id = 'pInfo'>
+        <img src={pInfo.image} alt = 'Profile Image' id = 'profImage' />
+
+        <div>
+        <label id = 'name'><h3>{pInfo.firstName} {pInfo.surname}</h3></label>
+        <label id = 'email'><h3>{pInfo.email}</h3></label>
+        <label id = 'applicant'>Application ID:<h3>{pInfo.appId}</h3></label>
+        </div>
+       
+        
     </div>
 )
 }

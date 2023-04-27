@@ -1,19 +1,16 @@
 import './App.css';
 import Bio from "../../components/Bio"
-import Login from "../Login"
 import TodoList from "../../components/TodoList"
 import { useState } from 'react';
 import { useEffect } from 'react';
-import ListItemComplete from '../../components/ListItemComplete';
 import {userData} from "../../components/data/data.js"
 import { useLocation } from "react-router-dom";
 
 /* using the database created, we want to create a function that will pull down data from the database and display it on the page, when the checkbox is checked, change completed in the database to be true
 
-use usestate to take in the data from the database and display the objects within the array on the page
+use useState to take in the data from the database and display the objects within the array on the page
 
 push the task object into an array and display the array on the page
-
 
 run through to-do list array and select completed key
 if completed === true then add object to second array and remove from first. 
@@ -43,10 +40,16 @@ function App() {
 
 
   return (
+    
     <div className="App">
-    <Bio pInfo = {pInfo}/>
-      <TodoList userData = {userData} setList ={setList} setComplete = {setComplete} list={list} complete={complete}/>
+      <div className="bio-column">
+        <Bio pInfo={pInfo} />
+      </div>
+      <div className="todolist-column">
+        <TodoList userData={userData} setList={setList} setComplete={setComplete} list={list} complete={complete} />
+      </div>
     </div>
   );
 }
+
 export default App;

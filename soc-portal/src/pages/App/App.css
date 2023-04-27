@@ -1,38 +1,134 @@
 .App {
+  width: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+#pInfo {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  height: 200px;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.todolist-column {
+  width: 60%;
+  flex: 1;
+  margin: 20px;
+
+}
+.bio-column {
+  flex: 0;
+}
+
+#name {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+#email {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#applicant {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#profImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+body {
+  margin: 10;
+  padding: 10;
+  background-color: #A9BCD0;
+}
+
+#lists-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 45%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  overflow-y: auto;
+  height: 80vh;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  margin-top: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #A9BCD0;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  height: 80vh;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+#checkbox {
+  margin-left: 10px;
+}
+
+#loginDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+#toDoListDiv {
+  margin: 20px
+}
+#completedListDiv {
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#ToDoListLi {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px;
 }
+
+#completedListLi {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px;
+}
+
