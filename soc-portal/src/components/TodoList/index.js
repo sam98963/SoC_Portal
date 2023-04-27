@@ -41,12 +41,12 @@ function TodoList({list, complete, setList, setComplete}) {
 
   return (
     <div>
-      <h3>To Do List</h3>
+      <h3>Outstanding Tasks:</h3>
       <ul>
         {list.map((item, index) => (
           <li key={index}>
             <label>
-              {item.task}
+              <p>Task: {item.task}</p><p>Date Due: {item.dueDate}</p>
               <input
                 type="checkbox"
                 checked={item.completed}
@@ -56,12 +56,12 @@ function TodoList({list, complete, setList, setComplete}) {
           </li>
         ))}
       </ul>
-      <h3>Completed List</h3>
+      <h3>Completed Tasks:</h3>
       <ul>
         {complete.map((item, index) => (
           <li key={index}>
             <label>
-              {item.task}
+            <p>Task: {item.task}</p>
               <input
                 type="checkbox"
                 checked={item.completed}

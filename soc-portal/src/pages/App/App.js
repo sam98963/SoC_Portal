@@ -1,10 +1,8 @@
 import './App.css';
 import Bio from "../../components/Bio"
-import Login from "../Login"
 import TodoList from "../../components/TodoList"
 import { useState } from 'react';
 import { useEffect } from 'react';
-import ListItemComplete from '../../components/ListItemComplete';
 import {userData} from "../../components/data/data.js"
 import { useLocation } from "react-router-dom";
 
