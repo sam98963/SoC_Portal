@@ -10,22 +10,21 @@ import { Outlet} from "react-router-dom";
 import {userData, loginData} from '../../components/data/data.js'
 import { useNavigate } from "react-router-dom";
 
-
-
-
-
 function Login (){
-    const navigate = useNavigate(); //a hook from react router dom that allows us to navigate to a different page
+
+    //a hook from react router dom that allows us to navigate to a different page
+    const navigate = useNavigate(); 
     
 // write a function to check details
 function handleLogin(event){
+
     event.preventDefault() //prevents the page from refreshing
     const username = event.target.elements.username.value //is the value of the input with the id of username
     const password = event.target.elements.password.value //is the value of the input with the id of password
+    let userEmail = "" // for loop loginData[i].username
 
-// for loop loginData[i].username
-    let userEmail = "" 
-    for (let i=0; i<loginData.length; i++){ //loop through loginData array and compare username and password against the data in the array
+    //loop through loginData array and compare username and password against the data in the array
+    for (let i=0; i<loginData.length; i++){ 
         if(username === loginData[i].username && password === loginData[i].password){
             userEmail = loginData[i].email
         } if(username === loginData[i].username && password !== loginData[i].password)
@@ -35,7 +34,8 @@ function handleLogin(event){
         else {console.log(false)}
       }
       
-    for (let i=0; i<loginData.length; i++){ //loop through userData array and compare email against the data in the array
+    //loop through userData array and compare email against the data in the array
+    for (let i=0; i<loginData.length; i++){ 
       if(userEmail === userData[i].email) {
         navigate("/App", {state: {userIndex:i}}) //navigate to App page, passing in the userIndex as state, which is i
 
@@ -47,10 +47,10 @@ function handleLogin(event){
 
     return (
         <>
-        <div>
+        <div id = 'loginDiv'>
             <form onSubmit = {handleLogin}>
-               <label>Username:<input type="text" id = "username"></input></label>
-                <label>Password:<input type="text" id = "password"></input></label>
+               <label id = 'usernameLabel'>Username:<input type="text" id = "username"></input></label>
+                <label id = 'passwordLabel'>Password:<input type="text" id = "password"></input></label>
                 <button type="submit">Submit</button>
             </form>
         </div>
