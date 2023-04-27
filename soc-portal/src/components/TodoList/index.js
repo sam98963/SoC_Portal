@@ -80,6 +80,38 @@ function TodoList({list, complete, setList, setComplete}) {
         </div>
       </div>
     </body>
+    <div>
+      <h3>Outstanding Tasks:</h3>
+      <ul>
+        {list.map((item, index) => (
+          <li key={index}>
+            <label>
+              <p>Task: {item.task}</p><p>Date Due: {item.dueDate}</p>
+              <input
+                type="checkbox"
+                checked={item.completed}
+                onChange={() => moveToCompleted(index)}
+              />
+            </label>
+          </li>
+        ))}
+      </ul>
+      <h3>Completed Tasks:</h3>
+      <ul>
+        {complete.map((item, index) => (
+          <li key={index}>
+            <label>
+            <p>Task: {item.task}</p>
+              <input
+                type="checkbox"
+                checked={item.completed}
+                onChange={() => moveToToDo(index)}
+              />
+            </label>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

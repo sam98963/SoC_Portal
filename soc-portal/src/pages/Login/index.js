@@ -6,7 +6,7 @@ onChange/onSubmit -> e.target.value
 
 // Loop through login data and compare against username and password
 // if true --> find common property (email) then we want to grab userData with relevant login account.
-import { Outlet, Link } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 import {userData, loginData} from '../../components/data/data.js'
 import { useNavigate } from "react-router-dom";
 
@@ -52,7 +52,6 @@ function handleLogin(event){
                <label id = 'usernameLabel'>Username:<input type="text" id = "username"></input></label>
                 <label id = 'passwordLabel'>Password:<input type="text" id = "password"></input></label>
                 <button type="submit">Submit</button>
-                <Link to = "/App">App</Link>
             </form>
         </div>
         <Outlet />
