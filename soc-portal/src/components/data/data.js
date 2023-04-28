@@ -13,7 +13,7 @@ export const loginData =  [
   },  
    {
       firstName: "Samuel",
-      surname: "Willimason",
+      surname: "Williamson",
       username:"samw",
       email: "samw@gmail.com",
       password: "1234"
@@ -68,7 +68,7 @@ export const userData = [
     },
     {
         firstName: "Samuel",
-        surname: "Willimason",
+        surname: "Williamson",
         email: "samw@gmail.com",
         appId: "llskkd998shdjf",
         image: profileImageSam,
