@@ -11,7 +11,7 @@ import {userData, loginData} from '../../components/data/data.js'
 import { useNavigate } from "react-router-dom";
 
 function Login (){
-
+    
     //a hook from react router dom that allows us to navigate to a different page
     const navigate = useNavigate(); 
     
@@ -49,7 +49,7 @@ function handleLogin(event){
         <>
         <div id = 'loginDiv'>
             <form id ='form' onSubmit = {handleLogin}>
-               <label id = 'usernameLabel'>Username:<input type="text" id = "username"></input></label>
+               <label id = 'usernameLabel'>Username: <input type="text" id = "username"></input></label>
                 <label id = 'passwordLabel'>Password:<input type="text" id = "password"></input></label>
                 <button type="submit">Submit</button>
             </form>
