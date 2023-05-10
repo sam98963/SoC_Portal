@@ -50,7 +50,7 @@ function handleLogin(event){
         <div id = 'img'>
         <div id = 'loginDiv'>
             <form id ='form' onSubmit = {handleLogin}>
-               <label id = 'usernameLabel'>Username: <input type="text" id = "username"></input></label>
+               <label id = 'usernameLabel'>Username:<input type="text" id = "username"></input></label>
                 <label id = 'passwordLabel'>Password:<input type="password" id = "password"></input></label>
                 <button type="submit">Submit</button>
             </form>
